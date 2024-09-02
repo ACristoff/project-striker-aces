@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bc3cxn15o2xjm"]
+
+[ext_resource type="Environment" uid="uid://r0lfrenjv2qe" path="res://content/default_sky.tres" id="1_k38iu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bx1nq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iinp1"]
+
+[node name="World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_k38iu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(113.731, 0, 0, 0, 0.422335, 0, 0, 0, 127.526, 0, -0.3, -11.2922)
+mesh = SubResource("BoxMesh_bx1nq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_iinp1")

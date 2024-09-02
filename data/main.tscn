@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dw5eyqbyj7cxr"]
+
+[ext_resource type="PackedScene" uid="uid://qmk4inc43ib8" path="res://game/characters/striker_ace.tscn" id="1_roquk"]
+[ext_resource type="PackedScene" uid="uid://bc3cxn15o2xjm" path="res://game/levels/_debug.tscn" id="2_a1sc7"]
+
+[node name="Main" type="Node"]
+
+[node name="StrikerAce" parent="." instance=ExtResource("1_roquk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00999641, -2.38419e-07, -0.0147634)
+
+[node name="World" parent="." instance=ExtResource("2_a1sc7")]

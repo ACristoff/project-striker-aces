@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuomeididew3c"]
+
+[ext_resource type="PackedScene" uid="uid://df2cwkt2bym2t" path="res://content/models/Basic Shooter Pack/X Bot.fbx" id="1_8vke8"]
+
+[node name="X Bot" instance=ExtResource("1_8vke8")]
+
+[node name="Skeleton3D" parent="." index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

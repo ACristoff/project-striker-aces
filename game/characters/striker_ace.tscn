@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://qmk4inc43ib8"]
+
+[ext_resource type="Script" path="res://game/characters/controller.gd" id="1_7meq4"]
+[ext_resource type="PackedScene" uid="uid://cuomeididew3c" path="res://content/models/maid/x_bot.tscn" id="2_3qkxl"]
+
+[sub_resource type="Animation" id="Animation_nb4j1"]
+resource_name = "root"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iw48q"]
+_data = {
+"root": SubResource("Animation_nb4j1")
+}
+
+[sub_resource type="AnimationRootNode" id="AnimationRootNode_621q5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0176l"]
+radius = 0.25
+height = 1.7
+
+[node name="StrikerAce" type="CharacterBody3D" node_paths=PackedStringArray("model")]
+script = ExtResource("1_7meq4")
+model = NodePath("X Bot")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+spring_length = 3.0
+margin = 0.1
+
+[node name="ThirdPersonCamera" type="Camera3D" parent="SpringArm3D"]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_iw48q")
+}
+tree_root = SubResource("AnimationRootNode_621q5")
+
+[node name="X Bot" parent="." instance=ExtResource("2_3qkxl")]
+
+[node name="FPSContainer" type="Node3D" parent="X Bot"]
+
+[node name="FPSCam" type="Camera3D" parent="X Bot/FPSContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6951, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.815294, 0)
+shape = SubResource("CapsuleShape3D_0176l")

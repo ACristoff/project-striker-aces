@@ -1,0 +1,17 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://r0lfrenjv2qe"]
+
+[ext_resource type="Texture2D" uid="uid://druvh2t1dj8sl" path="res://content/textures/farm_field_puresky_4k.hdr" id="1_rkjp7"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2aw4q"]
+panorama = ExtResource("1_rkjp7")
+
+[sub_resource type="Sky" id="Sky_d532r"]
+sky_material = SubResource("PanoramaSkyMaterial_2aw4q")
+
+[resource]
+background_mode = 2
+background_energy_multiplier = 0.8
+sky = SubResource("Sky_d532r")
+ambient_light_source = 3
+reflected_light_source = 2
+ssr_enabled = true

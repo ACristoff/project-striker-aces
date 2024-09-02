@@ -1,0 +1,11 @@
+Model Information:
+* title:	CZ2128 (Shizu) Delta
+* source:	https://sketchfab.com/3d-models/cz2128-shizu-delta-c4f57ce4bc2b4c46a32414515ba991e9
+* author:	Kuroko (https://sketchfab.com/thecensoredstudios)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "CZ2128 (Shizu) Delta" (https://sketchfab.com/3d-models/cz2128-shizu-delta-c4f57ce4bc2b4c46a32414515ba991e9) by Kuroko (https://sketchfab.com/thecensoredstudios) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
