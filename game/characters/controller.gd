@@ -1,10 +1,12 @@
 extends CharacterBody3D
 
 
-@onready var camera = $SpringArm3D/ThirdPersonCamera
-@onready var spring_arm = $SpringArm3D
+@onready var camera: Camera3D = $SpringArm3D/ThirdPersonCamera
+@onready var spring_arm: SpringArm3D = $SpringArm3D
 @export var model:Node3D = null
-@onready var fps_camera = $"X Bot/FPSContainer/FPSCam"
+@onready var fps_camera: Camera3D = $"X Bot/FPSContainer/FPSCam"
+##Don't have the camera as the child of this node, but have a separate camera controller script 
+##on the camera copying the position of that node.
 
 @export_group("Flight Mode Properties")
 @export_subgroup("Speed")
@@ -20,14 +22,12 @@ extends CharacterBody3D
 @export_range(10, 180, 1) var max_pitch: int = 30
 @export_range(3, 10, 0.5) var turbo_time: float = 5
 
-var grounded = false
-#var camera_modes = [camera, pov_camera]
+var grounded: bool = false
 enum camera_modes {FPS, TPS}
-var camera_mode = camera_modes.TPS
+var camera_mode: camera_modes = camera_modes.TPS
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
-	#fps_camera.active = false
 	pass
 
 func _physics_process(delta):
@@ -79,6 +79,7 @@ func get_move_input(delta):
 func _get_mouse_speed() -> Vector2:
 	var screen_center = get_viewport().size * 0.5
 	var displacement = screen_center - get_viewport().get_mouse_position()
+	## /= divides it by the other variable and declares the result the variable on the left
 	displacement.x /= screen_center.x
 	displacement.y /= screen_center.y
 	print(displacement)
