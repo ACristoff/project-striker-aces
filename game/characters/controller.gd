@@ -36,9 +36,15 @@ func _physics_process(delta):
 	pass
 
 func flight(delta):
-	_move(delta)
-	_pitch(delta)
-	_yaw(delta)
+	##Limit first person camera's mouse movement effect on pitch yaw roll
+	##Add movement effect on pitch yaw roll based on WASD
+	if camera_mode == camera_modes.FPS:
+		_move(delta)
+		pass
+	if camera_mode == camera_modes.TPS:
+		_move(delta)
+		_pitch(delta)
+		_yaw(delta)
 	pass
 
 func _move(delta):
